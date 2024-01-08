@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+
+// import Card from './components/Card';
 import './App.css';
+import Home from './components/Home';
+import Add from './components/Add';
+import Singleview from './components/Singleview';
+import { Route, Routes } from 'react-router-dom';
+import Edit from './components/Edit';
+import Cardview from './components/Cardview';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+    
+    
+    
+     <Routes>
+       <Route path='/' element={ <Home />} />
+       <Route path='/add' element={ <Add/>} />
+       <Route path='/card' element={ <Cardview/>} />
+       <Route path='/singleview/:id' element={<Singleview/>}/>
+       <Route path='/edit/:id' element={<Edit/>}/>
+     </Routes>
     </div>
   );
 }
